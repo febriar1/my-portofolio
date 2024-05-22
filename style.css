@@ -1,0 +1,436 @@
+:root {
+  --bg: #f1f5f9;
+  --cf: #020617;
+  --primary: #ff0050;
+  --p: #334155;
+  --btn: #00f2ea;
+  --hvr: #06b6d4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--cf);
+}
+
+i {
+  background: transparent;
+}
+.hamburger {
+  display: none;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1.4rem 7%;
+  z-index: 99999;
+  top: 0;
+}
+
+nav .nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--p);
+}
+
+nav .nav-brand span {
+  color: var(--primary);
+}
+
+nav .nav-link {
+  display: flex;
+  position: relative;
+  justify-content: end;
+  padding-right: 3rem;
+  width: 90%;
+}
+
+nav .nav-link .nav-list {
+  display: flex;
+  position: relative;
+  gap: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+nav .nav-link .nav-list li {
+  list-style: none;
+}
+
+nav .nav-link .nav-list li a {
+  text-decoration: none;
+}
+
+nav .nav-link .nav-list li a:hover {
+  color: var(--primary);
+  transition: 0.5s;
+}
+
+nav .icon-social {
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+/* hero section start */
+.hero,
+.about {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 10rem 7% 1.4rem;
+  justify-content: center;
+}
+
+.hero .container {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "main aside";
+  grid-template-columns: 1.4fr 1.3fr;
+}
+
+.hero main h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  animation: atas 1s linear;
+}
+
+.hero main h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  animation: atas 0.8s linear;
+}
+
+.hero main h1 span {
+  font-weight: 800;
+}
+
+.hero main p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--p);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  animation: atas 0.5s linear;
+}
+
+.hero main button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cf);
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+  padding: 0.5rem 2rem;
+  background-color: var(--btn);
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+  animation: zoom 0.5s linear;
+}
+
+.hero main button:hover {
+  background-color: var(--primary);
+  transition: 0.5s;
+}
+
+.hero main .card {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero main .card .profile {
+  display: flex;
+  position: absolute;
+  border: 3px solid #9ca3af;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  left: -3%;
+  top: -20%;
+  background-image: url(img/me.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero main .text {
+  width: 90%;
+  height: 70px;
+  border: 1px solid #9ca3af;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem 0;
+  background-color: #e5e7eb;
+}
+
+.hero main .card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+  padding-left: 0.5rem;
+  background-color: transparent;
+}
+
+.hero main .card a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.hero main .card p {
+  font-size: 0.8rem;
+  background: #e2e8f0;
+  padding: 0.3rem 0.5rem 0.3rem 1rem;
+  border-radius: 1rem;
+  color: var(--cf);
+  font-weight: 500;
+}
+
+aside {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+aside .image1 {
+  width: 400px;
+  height: 400px;
+  border-radius: 1.5rem;
+  background-image: url(img/me1.jfif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  right: 15%;
+  z-index: 2;
+  animation: tx 0.5s ease-in-out;
+}
+
+aside .image2 {
+  display: flex;
+  position: absolute;
+  border-radius: 1.5rem;
+  width: 399px;
+  height: 395px;
+  background-color: #00f2ea;
+  left: 9%;
+  top: -4.5%;
+  z-index: 1;
+  animation: zoom 0.5s ease-in-out;
+}
+
+aside .image3 {
+  display: flex;
+  position: relative;
+  border-radius: 1.5rem;
+  width: 399px;
+  height: 395px;
+  background-color: #ff0050;
+  right: -4%;
+  top: 5%;
+  animation: zoom 0.5s ease-in;
+}
+
+aside .sosmed {
+  display: flex;
+  position: absolute;
+  font-size: 1.4rem;
+  gap: 1.4rem;
+  right: 11%;
+  bottom: 3%;
+}
+
+@keyframes atas {
+  0% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+}
+
+@keyframes tx {
+  0% {
+    transform: translateX(50%);
+  }
+}
+/* hero section end */
+
+/* about section */
+.about .container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.about .header {
+  width: 95%;
+  height: 200px;
+  background: #00f2ea;
+  position: absolute;
+  padding: 2rem;
+  justify-content: center;
+  border-radius: 1.5rem;
+  top: -15%;
+  z-index: 1;
+}
+
+.about .header h1 {
+  background-color: transparent;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.about .header p {
+  background-color: transparent;
+  font-size: 1.2rem;
+}
+
+.about .body {
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ff0050;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 5rem 1rem;
+}
+
+/* about section end */
+
+@media (max-width: 576px) {
+  html {
+    font-size: 65%;
+  }
+
+  nav .nav-link {
+    display: flex;
+    position: absolute;
+    top: -1000%;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: 0.5s ease-in;
+  }
+
+  nav .nav-link.open {
+    top: 100%;
+  }
+
+  nav .nav-link .nav-list {
+    display: block;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    justify-self: center;
+  }
+
+  nav .nav-link .nav-list li {
+    margin-bottom: 3rem;
+    font-size: 1.4rem;
+  }
+
+  nav .nav-brand {
+    font-size: 1.4rem;
+  }
+
+  nav .hamburger {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  nav .icon-social {
+    width: 90%;
+    display: flex;
+    position: relative;
+    justify-content: end;
+    padding-right: 1.2rem;
+  }
+
+  .hero .container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero main .card {
+    display: none;
+  }
+
+  aside {
+    display: block;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+
+  aside .image1 {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  aside .image2 {
+    display: block;
+    position: absolute;
+    width: 199px;
+    height: 195px;
+    top: -6%;
+  }
+
+  aside .image3 {
+    display: block;
+    position: absolute;
+    border-radius: 1.5rem;
+    width: 199px;
+    height: 195px;
+    right: 20%;
+    top: -12%;
+  }
+
+  aside .sosmed {
+    display: block;
+    position: absolute;
+    top: -30%;
+    background: transparent;
+    left: 0;
+  }
+
+  aside .sosmed i {
+    margin-right: 0.8rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .hero main button {
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  aside .sosmed {
+    top: -20%;
+  }
+
+  aside .image3 {
+    right: -5%;
+  }
+}
