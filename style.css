@@ -7,18 +7,33 @@
   --hvr: #06b6d4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: "Inter", sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--cf);
 }
 
-i {
-  background: transparent;
+.hero a,
+nav a {
+  color: var(--cf);
 }
+
+.hero a:hover,
+nav a:hover {
+  color: var(--primary);
+  transition: 0.5s;
+}
+
 .hamburger {
   display: none;
 }
@@ -30,9 +45,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  padding: 1.4rem 7%;
+  padding: 1.4rem 5%;
   z-index: 99999;
+  background-color: rgba(241, 245, 249, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   top: 0;
+  transition: 0.3s;
+}
+
+nav .hamburger i {
+  transition: 1s;
 }
 
 nav .nav-brand {
@@ -50,7 +73,7 @@ nav .nav-link {
   position: relative;
   justify-content: end;
   padding-right: 3rem;
-  width: 90%;
+  width: 100%;
 }
 
 nav .nav-link .nav-list {
@@ -82,13 +105,12 @@ nav .icon-social {
 }
 
 /* hero section start */
-.hero,
-.about {
+.hero {
   display: flex;
   position: relative;
   height: 100vh;
   width: 100%;
-  padding: 10rem 7% 1.4rem;
+  padding: 10rem 5% 1.4rem;
   justify-content: center;
 }
 
@@ -114,10 +136,12 @@ nav .icon-social {
 
 .hero main h1 span {
   font-weight: 800;
+  color: #ff0050;
 }
 
 .hero main p {
   font-size: 1.4rem;
+  text-align: justify;
   font-weight: 400;
   color: var(--p);
   letter-spacing: 1px;
@@ -212,44 +236,18 @@ aside .image1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: absolute;
-  right: 15%;
-  z-index: 2;
+  box-shadow: 20px 20px 0 #ff0050, -20px -20px 0 #00f2ea;
   animation: tx 0.5s ease-in-out;
-}
-
-aside .image2 {
-  display: flex;
-  position: absolute;
-  border-radius: 1.5rem;
-  width: 399px;
-  height: 395px;
-  background-color: #00f2ea;
-  left: 9%;
-  top: -4.5%;
-  z-index: 1;
-  animation: zoom 0.5s ease-in-out;
-}
-
-aside .image3 {
-  display: flex;
-  position: relative;
-  border-radius: 1.5rem;
-  width: 399px;
-  height: 395px;
-  background-color: #ff0050;
-  right: -4%;
-  top: 5%;
-  animation: zoom 0.5s ease-in;
 }
 
 aside .sosmed {
   display: flex;
-  position: absolute;
+  flex-direction: column;
+  position: relative;
   font-size: 1.4rem;
   gap: 1.4rem;
-  right: 11%;
-  bottom: 3%;
+  justify-self: flex-end;
+  right: -5%;
 }
 
 @keyframes atas {
@@ -272,47 +270,131 @@ aside .sosmed {
 /* hero section end */
 
 /* about section */
-.about .container {
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  padding: 1.4rem 5%;
+  justify-content: center;
+  align-items: center;
+}
+.about .table {
   width: 100%;
   display: flex;
+  flex-direction: column;
   position: relative;
-  justify-content: center;
-}
-
-.about .header {
-  width: 95%;
-  height: 200px;
-  background: #00f2ea;
-  position: absolute;
   padding: 2rem;
+  background-color: #ff0050;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
   justify-content: center;
-  border-radius: 1.5rem;
-  top: -15%;
-  z-index: 1;
+  align-items: center;
+  border-radius: 3rem;
 }
 
-.about .header h1 {
-  background-color: transparent;
+.about .table h1 {
   font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 2rem;
 }
 
-.about .header p {
-  background-color: transparent;
-  font-size: 1.2rem;
+.about .table span {
+  font-size: 4rem;
+  color: var(--bg);
 }
 
-.about .body {
+.about .table p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: justify;
+  line-height: 1.3;
+  word-spacing: 1px;
+  letter-spacing: none;
+  margin-bottom: 0.5rem;
+}
+
+.about .table .media {
+  display: flex;
   position: relative;
   justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #ff0050;
-  border-radius: 1.5rem 1.5rem 0 0;
-  padding: 5rem 1rem;
+  margin-top: 1rem;
 }
 
+.about .table .media ul {
+  display: flex;
+  font-size: 1.2rem;
+  list-style: none;
+  gap: 1rem;
+}
+
+.about .tablet .media ul li a {
+  color: var(--bg) !important;
+}
+
+.about .tablet .media ul li a:hover {
+  color: var(--p);
+}
+
+.about .table p a {
+  color: var(--btn);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about .table p a:hover {
+  color: var(--bg);
+}
+
+.about .table .media a {
+  color: var(--btn);
+}
+
+.about .table .media a:hover {
+  color: var(--bg);
+}
+
+.about .info {
+  width: 50%;
+  padding: 2rem;
+  border: 2px solid #9ca3af;
+  margin-top: 5rem;
+  border-radius: 1rem;
+  background-color: #f3f4f6;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+}
+
+.about .info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.about .info p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.about .info i {
+  font-size: 2rem;
+}
+.about .info div {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-top: 1rem;
+}
 /* about section end */
+
+footer {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
 
 @media (max-width: 576px) {
   html {
@@ -323,11 +405,15 @@ aside .sosmed {
     display: flex;
     position: absolute;
     top: -1000%;
+    width: 100%;
     height: 50vh;
     justify-content: center;
     align-items: center;
+    background: var(--bg);
     padding: 0;
-    transition: 0.5s ease-in;
+    left: 0;
+    right: 0;
+    transition: 0.5s;
   }
 
   nav .nav-link.open {
@@ -349,11 +435,13 @@ aside .sosmed {
 
   nav .nav-brand {
     font-size: 1.4rem;
+    z-index: 1;
   }
 
   nav .hamburger {
     display: block;
     font-size: 1.5rem;
+    z-index: 1;
   }
 
   nav .icon-social {
@@ -362,6 +450,17 @@ aside .sosmed {
     position: relative;
     justify-content: end;
     padding-right: 1.2rem;
+  }
+
+  .about .info {
+    width: 80%;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero main button {
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
   }
 
   .hero .container {
@@ -377,60 +476,26 @@ aside .sosmed {
   aside {
     display: block;
     position: relative;
-    width: 100%;
     justify-content: center;
   }
 
   aside .image1 {
     width: 200px;
     height: 200px;
-    position: relative;
-    left: 0;
-    right: 0;
   }
-
-  aside .image2 {
-    display: block;
-    position: absolute;
-    width: 199px;
-    height: 195px;
-    top: -6%;
-  }
-
-  aside .image3 {
-    display: block;
-    position: absolute;
-    border-radius: 1.5rem;
-    width: 199px;
-    height: 195px;
-    right: 20%;
-    top: -12%;
-  }
-
   aside .sosmed {
-    display: block;
-    position: absolute;
-    top: -30%;
-    background: transparent;
-    left: 0;
+    flex-direction: unset;
+    top: 9%;
   }
 
   aside .sosmed i {
     margin-right: 0.8rem;
+    background: transparent;
   }
 }
 
-@media (max-width: 300px) {
-  .hero main button {
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-
+@media (max-width: 320px) {
   aside .sosmed {
-    top: -20%;
-  }
-
-  aside .image3 {
-    right: -5%;
+    bottom: 10%;
   }
 }
